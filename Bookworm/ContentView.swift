@@ -7,7 +7,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.rating),
@@ -15,7 +14,6 @@ struct ContentView: View {
         SortDescriptor(\.author)
     ]) var books: FetchedResults<Book>
     @State private var showingAddScreen = false
-    
     var body: some View {
         NavigationView {
             List {

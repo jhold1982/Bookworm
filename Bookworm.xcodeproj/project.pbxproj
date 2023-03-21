@@ -17,6 +17,8 @@
 		6412BCDC28F4A1E200A6E69E /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412BCDB28F4A1E200A6E69E /* RatingView.swift */; };
 		6412BCDE28F4A93F00A6E69E /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412BCDD28F4A93F00A6E69E /* EmojiRatingView.swift */; };
 		6412BCE028F4CC4300A6E69E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412BCDF28F4CC4300A6E69E /* DetailView.swift */; };
+		64BD9C3429C9BC7A001213A1 /* ExampleView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BD9C3329C9BC7A001213A1 /* ExampleView1.swift */; };
+		64BD9C3629C9BEA9001213A1 /* ExampleView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BD9C3529C9BEA9001213A1 /* ExampleView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		6412BCDB28F4A1E200A6E69E /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		6412BCDD28F4A93F00A6E69E /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
 		6412BCDF28F4CC4300A6E69E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		64BD9C3329C9BC7A001213A1 /* ExampleView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView1.swift; sourceTree = "<group>"; };
+		64BD9C3529C9BEA9001213A1 /* ExampleView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +69,10 @@
 			children = (
 				6412BCC628F1E6B300A6E69E /* BookwormApp.swift */,
 				6412BCC828F1E6B300A6E69E /* ContentView.swift */,
-				6412BCD928F49C3D00A6E69E /* AddBookView.swift */,
-				6412BCDF28F4CC4300A6E69E /* DetailView.swift */,
-				6412BCDB28F4A1E200A6E69E /* RatingView.swift */,
-				6412BCDD28F4A93F00A6E69E /* EmojiRatingView.swift */,
 				6412BCD728F1ED5D00A6E69E /* DataController.swift */,
-				6412BCD428F1ECBD00A6E69E /* Bookworm.xcdatamodeld */,
+				64BD9C3029C9B999001213A1 /* Views */,
+				64BD9C3229C9B9D4001213A1 /* Data Models */,
+				64BD9C3129C9B9A8001213A1 /* Project Examples */,
 				6412BCCA28F1E6B400A6E69E /* Assets.xcassets */,
 				6412BCCC28F1E6B400A6E69E /* Preview Content */,
 			);
@@ -83,6 +85,34 @@
 				6412BCCD28F1E6B400A6E69E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		64BD9C3029C9B999001213A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6412BCD928F49C3D00A6E69E /* AddBookView.swift */,
+				6412BCDF28F4CC4300A6E69E /* DetailView.swift */,
+				6412BCDD28F4A93F00A6E69E /* EmojiRatingView.swift */,
+				6412BCDB28F4A1E200A6E69E /* RatingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		64BD9C3129C9B9A8001213A1 /* Project Examples */ = {
+			isa = PBXGroup;
+			children = (
+				64BD9C3329C9BC7A001213A1 /* ExampleView1.swift */,
+				64BD9C3529C9BEA9001213A1 /* ExampleView2.swift */,
+			);
+			path = "Project Examples";
+			sourceTree = "<group>";
+		};
+		64BD9C3229C9B9D4001213A1 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				6412BCD428F1ECBD00A6E69E /* Bookworm.xcdatamodeld */,
+			);
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +185,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64BD9C3429C9BC7A001213A1 /* ExampleView1.swift in Sources */,
 				6412BCC928F1E6B300A6E69E /* ContentView.swift in Sources */,
+				64BD9C3629C9BEA9001213A1 /* ExampleView2.swift in Sources */,
 				6412BCE028F4CC4300A6E69E /* DetailView.swift in Sources */,
 				6412BCD828F1ED5D00A6E69E /* DataController.swift in Sources */,
 				6412BCDE28F4A93F00A6E69E /* EmojiRatingView.swift in Sources */,
@@ -291,13 +323,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bookworm/Preview Content\"";
+				DEVELOPMENT_TEAM = N8877H53MP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,9 +339,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lefthandedapps.Bookworm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,13 +356,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bookworm/Preview Content\"";
+				DEVELOPMENT_TEAM = N8877H53MP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +372,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lefthandedapps.Bookworm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
