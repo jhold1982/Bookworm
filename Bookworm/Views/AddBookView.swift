@@ -8,55 +8,74 @@
 import SwiftUI
 
 struct AddBookView: View {
-    @Environment(\.managedObjectContext) var moc
-    @Environment(\.dismiss) var dismiss
-    @State private var title = ""
-    @State private var author = ""
-    @State private var rating = 3
-    @State private var genre = ""
-    @State private var review = ""
-    let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
+   
+	// MARK: - PROPERTIES
+	@Environment(\.modelContext) var modelContext
+	@Environment(\.dismiss) var dismiss
+	
+	@State private var title: String = ""
+	@State private var author: String = ""
+	@State private var rating: Int = 3
+	@State private var genre: String = "Fantasy"
+	@State private var review: String = ""
+	
+	let genres: [String] = [
+		"Fantasy",
+		"Horror",
+		"Kids",
+		"Mystery",
+		"Poetry",
+		"Romance",
+		"Thriller"
+	]
+    
+	// MARK: - VIEW BODY
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    TextField("Name of Book", text: $title)
-                    TextField("Name of Author", text: $author)
-                    Picker("Genre", selection: $genre) {
-                        ForEach(genres, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                }
-                Section {
-                    TextEditor(text: $review)
-                    RatingView(rating: $rating)
-                } header: {
-                    Text("User Review")
-                }
-                Section {
-                    Button("Save") {
-                        let newBook = Book(context: moc)
-                        newBook.id = UUID()
-                        newBook.title = title
-                        newBook.author = author
-                        newBook.rating = Int16(rating)
-                        newBook.genre = genre
-                        newBook.review = review
-                        newBook.date = Date.now
-                        try? moc.save()
-                        dismiss()
-                    }
-                }
-                .disabled(title.isEmpty || author.isEmpty || genre.isEmpty)
-            }
-            .navigationTitle("Add Book")
-        }
+		
+		NavigationStack {
+			Form {
+				
+				Section {
+					TextField("Name of book", text: $title)
+					TextField("Author's name", text: $author)
+					
+					Picker("Genre", selection: $genre) {
+						ForEach(genres, id: \.self) {
+							Text($0)
+						}
+					}
+					.pickerStyle(.menu)
+				}
+				
+				Section("Leave a review") {
+					TextEditor(text: $review)
+					
+					RatingView(rating: $rating)
+				}
+				
+				Section {
+					Button("Save") {
+						// defines the new book a user entered
+						let newBook = Book(
+							title: title,
+							author: author,
+							genre: genre,
+							review: review,
+							rating: rating,
+							date: .now
+						)
+						// adds the new book to the DataModel
+						modelContext.insert(newBook)
+						dismiss()
+					}
+					.disabled(title.isEmpty || author.isEmpty)
+				}
+			}
+			.navigationTitle("Add Book")
+		}
     }
 }
 
-struct AddBookView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddBookView()
-    }
+#Preview {
+	AddBookView()
 }

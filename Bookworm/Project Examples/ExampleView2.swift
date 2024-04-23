@@ -5,15 +5,18 @@
 //  Created by Justin Hold on 3/21/23.
 //
 
-// MARK: Accepting multi-line text input with TextEditor
+// MARK: - Accepting multi-line text input with TextEditor
 
 import SwiftUI
 
 struct ExampleView2: View {
+	
 	@AppStorage("notes") private var notes = ""
+	
     var body: some View {
-		NavigationView {
-			TextEditor(text: $notes)
+		NavigationStack {
+			TextField("Enter your text", text: $notes, axis: .vertical)
+				.textFieldStyle(.roundedBorder)
 				.navigationTitle("Notes")
 				.padding()
 		}

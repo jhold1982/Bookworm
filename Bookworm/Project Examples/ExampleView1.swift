@@ -5,8 +5,6 @@
 //  Created by Justin Hold on 3/21/23.
 //
 
-// MARK: Creating a custom component with @Binding
-
 import SwiftUI
 
 struct PushButton: View {
@@ -30,6 +28,7 @@ struct PushButton: View {
 		.shadow(radius: isOn ? 0 : 5)
 	}
 }
+
 // Content View
 struct ExampleView1: View {
 	@State private var rememberMe = false
